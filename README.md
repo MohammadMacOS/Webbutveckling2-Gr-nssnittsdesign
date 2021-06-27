@@ -21,6 +21,8 @@
 17. Skapat en Child.js fil.
 18. Skapat en Conditionalrendering.js fil.
 19. Skapat test folder för tester.
+20. Skapat 2 persona.
+![]()(person1.png)
+![](person2.png)
 
-
-# Webbutveckling2-Gr-nssnittsdesign
+#React-project
