@@ -33,7 +33,7 @@ test('header renders with correct text', () =>{
     expect(headerElement.textContent).toBe('Förbrukning(L/MIL)')
 });
 
-test('change value of input works correctly', () => {
+    test('change value of input works correctly', () => {
      const inputElment = getByTestId('input');
 
     expect(inputElment.value).toBe('');
