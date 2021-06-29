@@ -2,7 +2,6 @@ body {
     display: grid;
 }
 
-
 .Button1 {
     position: center;
     padding: 3px;
@@ -14,6 +13,7 @@ body {
     cursor: pointer;
 
 }
+
 
 .Profile-today {
     text-align: center;

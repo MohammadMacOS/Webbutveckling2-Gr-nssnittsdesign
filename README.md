@@ -2,7 +2,7 @@
 
 
 1. Skapat wireframes,  prototype för projektet
-![](images/prototype.png)
+![](img/prototype.png)
 2. Skapat ett projekt med namn 2021-06-10.
 3. starta projekt `cd 2021-06-10` `npm start`.
 4. Ta bort filer som inte används.
@@ -22,7 +22,7 @@
 18. Skapat en Conditionalrendering.js fil.
 19. Skapat test folder för tester.
 20. Skapat 2 persona.
-![]()(person1.png)
-![](person2.png)
+![](img/person1.png)
+![](img/person2.png)
 
 #React-project

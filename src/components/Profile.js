@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import "./Profile.css";
 
 export default function Profile() {
-  const [consumption, setConsumption] = useState('');
-  const [distance, setDistance] = useState('');
-  const [fuelCost, setFuelCost] = useState('');
+  const [consumption, setConsumption] = useState(0);
+  const [distance, setDistance] = useState(0);
+  const [fuelCost, setFuelCost] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
-
-
 
   const handleConsumptionChange = (event) => {
     setConsumption(event.target.value);
@@ -30,7 +28,7 @@ function ClearAll() {
 }
   
  
-let totalCostForAll  = (distance / 100 * consumption * fuelCost).toFixed(2);
+let totalCostForAll  = (distance / 10 * consumption * fuelCost).toFixed(2);
 
 function NewMessage() {
   if  (totalCostForAll  >= 1000) {
@@ -46,43 +44,38 @@ function NewMessage() {
 
   return ( 
     <div className="Profile-today">
-      
-      <h2 className='fl  mr30-l cl-b'>Destination till.ex Göteborg till Stockholm</h2>
+      <h3>Här kan du kalkylator bränsleförbrukning , sträckan och bensinpriset</h3>
       <br/>
       <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <input type='text' placeholder='från'/>
-      <br/>
-      <br/>
-      <br/>
-      <input type='text' placeholder='till'/>
+   
 
-      <h3>Förbrukning(L/KM)</h3>
-      <input type="number" step=".01" className="input-field" onChange={handleConsumptionChange} />
-      <button className="Button5" onClick={() => {setConsumption(0);}}>Rensa</button>
+
+      <h3 data-testid='header'>Förbrukning(L/MIL)</h3>
+      <input data-testid='input' type="number" step=".01" className="input-field" onChange={ (event) =>{
+        setConsumption(0)}, handleConsumptionChange } />
+      
       <br />
       <div className="grid-numer-2">
-        <h3>Sträckan(KM)</h3>
-        <input type="number" step=".1" className="input-field" onChange={ handleDistanceChange }/>
-        <button className="Button5" onClick={() => {setDistance(0);}}>Rensa</button>
+        <h3>Sträckan(MIL)</h3>
+        <input data-testid='input' type="number" step=".1" className="input-field" onChange={ (event) =>{
+         setDistance(0)}, handleDistanceChange }/>
+        
       </div>
       <h3>Bensinpriset (KR/L)</h3>
-      <input type="number" step=".01" className="input-field" onChange={ handleFuelCostChange }/>
-      <button className="Button5" onClick={() => {setFuelCost(0);}}>Rensa</button>
-      <h3>TotalKostnaden</h3>
-      <input type="number" className="input-field" value={ totalCost }/>
-      <button className="Button5" onClick={ ClearAll }>
+      <input data-testid='input' type="number" step=".01" className="input-field" onChange={(event) => {
+        setFuelCost(parseInt(0))}, handleFuelCostChange }/>
+      <br/>
+        <br/>
+        <br/>
+      <button className="Button5" onClick={ () =>{ setDistance(0); }}>
         Rensa allt</button>
         <br/>
         <br/>
-        <h2 className='fl mr-30'>TotalKostnaden <span>
+        <h2 className='fl mr-30-l'>TotalKostnaden <span>
           <u>{ totalCostForAll  }</u></span></h2>
         <br/>
         <br/>
-        <h2><strong className='fl mr-30'>{ NewMessage() }</strong></h2>
+        <h2><strong className='fl mr-5'>{ NewMessage() }</strong></h2>
       
     </div>
 

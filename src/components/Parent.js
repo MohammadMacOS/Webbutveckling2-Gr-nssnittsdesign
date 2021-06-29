@@ -8,11 +8,11 @@
     setCount(+1);
   };
 
-  return (
-    <>
-      <h1>Parent</h1>
+  //return (
+    //<>
+     
 
-      <Child onClick={Consumption} count={count} />
-    </>
-  );
+      //<Child onClick={Consumption} count={count} />
+    //</>
+  //);
 
