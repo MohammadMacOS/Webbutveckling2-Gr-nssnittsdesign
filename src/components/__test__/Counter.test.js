@@ -29,27 +29,27 @@ test('header renders with correct text', () =>{
 
 test('header renders with correct text', () =>{
     const component = render(<Profile/>);
-    const headerElement = component.getByTestId('header');
+  const headerElement = component.getByTestId('header');
     expect(headerElement.textContent).toBe('Förbrukning(L/MIL)')
 });
 
 test('change value of input works correctly', () => {
      const inputElment = getByTestId('input');
 
-     expect(inputElment.value).toBe('1');
+    expect(inputElment.value).toBe('');
 
      fireEvent.change(inputElment,{
          target: {
-             value: '1000'
+            value: ''
          }
      })
 
-     expect(inputElment.value).toBe('1000')
+     expect(inputElment.value).toBe('')
 })
 
 
-//test('header renders with correct text', () =>{
-  //const component = render(<Profile/>);
-    //const headerElement = component.getByTestId('header');
-    //expect(headerElement.textContent).toBe('Sträckan(MIL)')
-//})
+test('header renders with correct text', () =>{
+  const component = render(<Profile/>);
+    const headerElement = component.getByTestId('header');
+    expect(headerElement.textContent).toBe('Sträckan(MIL)')
+})

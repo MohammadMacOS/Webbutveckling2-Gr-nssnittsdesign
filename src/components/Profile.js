@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.css";
 
 export default function Profile() {
@@ -26,16 +26,17 @@ function ClearAll() {
   setFuelCost(0);
   setTotalCost(0);
 }
-  
+
+
  
-let totalCostForAll  = (distance / 10 * consumption * fuelCost).toFixed(2);
+let totalCostForAll  = (distance/ 100 * 100 *  consumption * fuelCost).toFixed(2);
 
 function NewMessage() {
   if  (totalCostForAll  >= 1000) {
       return 'Har du funderat på flyg?'
   } else if (totalCostForAll  >= 400) {
       return 'Har du funderat på att åka tåg?'
-  } else if (totalCostForAll  >= 50) {
+  } else if (totalCostForAll  >= 1) {
       return 'Resonabel resa'
   } else {
       return ''
@@ -51,23 +52,20 @@ function NewMessage() {
 
 
       <h3 data-testid='header'>Förbrukning(L/MIL)</h3>
-      <input data-testid='input' type="number" step=".01" className="input-field" onChange={ (event) =>{
-        setConsumption(0)}, handleConsumptionChange } />
+      <input data-testid='input' type="number" step=".01" className="input-field" onChange={ handleConsumptionChange } />
       
       <br />
       <div className="grid-numer-2">
         <h3>Sträckan(MIL)</h3>
-        <input data-testid='input' type="number" step=".1" className="input-field" onChange={ (event) =>{
-         setDistance(0)}, handleDistanceChange }/>
+        <input data-testid='input' type="number" step=".1" className="input-field" onChange={ handleDistanceChange }/>
         
       </div>
       <h3>Bensinpriset (KR/L)</h3>
-      <input data-testid='input' type="number" step=".01" className="input-field" onChange={(event) => {
-        setFuelCost(parseInt(0))}, handleFuelCostChange }/>
+      <input data-testid='input' type="number" step=".01" className="input-field" onChange={ handleFuelCostChange }/>
       <br/>
         <br/>
         <br/>
-      <button className="Button5" onClick={ () =>{ setDistance(0); }}>
+      <button className="Button5" onClick={ () =>{ ClearAll(0); }}>
         Rensa allt</button>
         <br/>
         <br/>
