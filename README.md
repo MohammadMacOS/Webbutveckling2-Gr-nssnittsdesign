@@ -2,7 +2,7 @@
 
 
 1. Skapat wireframes,  prototype för projektet
-![](img/prototype.png)
+![](images/prototype.png)
 2. Skapat ett projekt med namn 2021-06-10.
 3. starta projekt `cd 2021-06-10` `npm start`.
 4. Ta bort filer som inte används.
@@ -22,7 +22,11 @@
 18. Skapat en Conditionalrendering.js fil.
 19. Skapat test folder för tester.
 20. Skapat 2 persona.
-![](img/person1.png)
-![](img/person2.png)
+![](images/person1.png)
+![](images/person2.png)
+21. Det gick bra med att importera bilder och skriva funktioner samt koda CSS med TACHYONS.
+22. Det gick dåligt i början att få värdet men löste det efter flera försök.
+23. Har lärt mig använda TACHYONS , arrow funktioner , USESTATE , skriva tester i koden , sätta på en bild som background i React.
+24. Jag tror att man måste använda mer arrow funktion och försöka göra flera tester för att få en bra kod samt skriva koden på ett fint sätt.
 
 #React-project

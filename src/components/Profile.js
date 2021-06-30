@@ -54,45 +54,45 @@ export default function Profile() {
       <br />
       <h3 data-testid="header">Förbrukning(L/MIL)</h3>
       <input
-        data-testid="input"
+        data-testid="input-1"
         type="number"
         step=".01"
         className="input-field"
-        onChange={handleConsumptionChange}
+        onChange={ handleConsumptionChange }
+        value={consumption}
       />
 
       <br />
       <div className="grid-numer-2">
         <h3>Sträckan(MIL)</h3>
         <input
-          data-testid="input"
+          data-testid="input-2"
           type="number"
           step=".1"
           className="input-field"
           onChange={
-            ((event) => {
-              setDistance(event.target.value);
-            },
-            handleDistanceChange)
+            handleDistanceChange
           }
+          value={distance}
         />
       </div>
       <h3>Bensinpriset (KR/L)</h3>
       <input
-        data-testid="input"
+        data-testid="inpu-3"
         type="number"
         step=".01"
         className="input-field"
         onChange={handleFuelCostChange}
+        value={fuelCost}
       />
       <br />
       <br />
       <br />
       <button
         className="Button5"
-        onClick={() => {
-          ClearAll(0);
-        }}
+        onClick={
+          ClearAll
+        }
       >
         Rensa allt
       </button>
